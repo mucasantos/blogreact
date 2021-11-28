@@ -9,6 +9,7 @@ import Loader from '../../components/Loader/Loader';
 import ErrorHandler from '../../components/ErrorHandler/ErrorHandler';
 import './Feed.css';
 
+let url = 'http://localhost:8080/';
 class Feed extends Component {
   state = {
     isEditing: false,
@@ -22,7 +23,7 @@ class Feed extends Component {
   };
 
   componentDidMount() {
-    fetch('URL')
+    fetch(url + 'feed/posts')
       .then(res => {
         if (res.status !== 200) {
           throw new Error('Failed to fetch user status.');
@@ -50,7 +51,7 @@ class Feed extends Component {
       page--;
       this.setState({ postPage: page });
     }
-    fetch('URL')
+    fetch(url + 'feed/posts')
       .then(res => {
         if (res.status !== 200) {
           throw new Error('Failed to fetch posts.');
