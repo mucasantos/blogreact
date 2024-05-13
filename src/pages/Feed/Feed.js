@@ -38,7 +38,7 @@ class Feed extends Component {
 
     this.loadPosts();
 
-    openSocket(url);
+    //openSocket(url);
   }
 
   loadPosts = direction => {

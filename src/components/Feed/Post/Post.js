@@ -2,8 +2,12 @@ import React from 'react';
 
 import Button from '../../Button/Button';
 import './Post.css';
+import Image from '../../../components/Image/Image';
+
+const server = "http://10.92.198.38:8080/"
 
 const post = props => (
+
   <article className="post">
     <header className="post__header">
       <h3 className="post__meta">
@@ -11,10 +15,12 @@ const post = props => (
       </h3>
       <h1 className="post__title">{props.title}</h1>
     </header>
-    {/* <div className="post__image">
-      <Image imageUrl={props.image} contain />
+     <div className="post__image">
+      
+      <img className="post__image" src={server + props.image}></img>
+
     </div>
-    <div className="post__content">{props.content}</div> */}
+    <div className="post__content">{props.content}</div> 
     <div className="post__actions">
       <Button mode="flat" link={props.id}>
         View
@@ -28,5 +34,6 @@ const post = props => (
     </div>
   </article>
 );
+
 
 export default post;
